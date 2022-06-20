@@ -1,0 +1,13 @@
+<launch>
+
+    <arg name="namespace" default="remaro" />
+
+    <group ns="$(arg namespace)">
+        <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="config" value="$(find remaro_package)/config/remaro.yaml" />
+            <arg name="robot" value="$(find remaro_package)/model/remaro.xml" />
+            <arg name="world" value="$(find remaro_package)/model/world.xml" />
+        </include>
+    </group>
+
+</launch>

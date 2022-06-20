@@ -1,0 +1,518 @@
+<?xml version="1.0"?>
+<!-- created with Phobos 1.0.1 "Capricious Choutengan" -->
+  <robot name="remaro">
+
+    <link name="link_base">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.02757" ixy="0" ixz="0" iyy="0.57467" iyz="0" izz="0.57385"/>
+      </inertial>
+      <visual name="base">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/base.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="body_led1"/>
+      </visual>
+      <collision name="base">
+        <origin xyz="-0.00055 1e-05 -5e-05" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/base.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_cam_bottom">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00059" ixy="0" ixz="0" iyy="0.00059" iyz="0" izz="0.00068"/>
+      </inertial>
+      <visual name="cam_bottom">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/cam_bottom.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="camera_accent"/>
+      </visual>
+      <collision name="cam_bottom">
+        <origin xyz="0 0 -0.0007" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/cam_bottom.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_cam_front">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00068" ixy="0" ixz="0" iyy="0.00059" iyz="0" izz="0.00059"/>
+      </inertial>
+      <visual name="cam_front">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/cam_front.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="camera_base"/>
+      </visual>
+      <collision name="cam_front">
+        <origin xyz="0.00064 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/cam_front.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_dvl">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00127" ixy="0" ixz="0" iyy="0.00127" iyz="0" izz="0.00205"/>
+      </inertial>
+      <visual name="dvl">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/dvl.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="dvl_accent"/>
+      </visual>
+      <collision name="dvl">
+        <origin xyz="2e-05 0 -0.00103" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/dvl.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_fin_bar">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="2e-05" ixy="0" ixz="0" iyy="2e-05" iyz="0" izz="0.00184"/>
+      </inertial>
+      <visual name="fin_bar">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fin_bar.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="body_bottom"/>
+      </visual>
+    </link>
+
+    <link name="link_fin_pair_h">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.69678" ixy="0" ixz="0" iyy="0.02607" iyz="0" izz="0.72155"/>
+      </inertial>
+      <visual name="fin_pair_h">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fin_pair_h.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="fin"/>
+      </visual>
+      <collision name="fin_pair_h">
+        <origin xyz="-0.00073 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fin_pair_h.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_fin_pair_v">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.86184" ixy="0" ixz="0" iyy="0.89248" iyz="0" izz="0.03224"/>
+      </inertial>
+      <visual name="fin_pair_v">
+        <origin xyz="0 0 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fin_pair_v.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="fin"/>
+      </visual>
+      <collision name="fin_pair_v">
+        <origin xyz="-0.00077 0 0" rpy="-1.5708 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fin_pair_v.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_fls">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00049" ixy="0" ixz="0" iyy="0.00048" iyz="0" izz="0.00051"/>
+      </inertial>
+      <visual name="fls">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fls.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="fls_accent"/>
+      </visual>
+      <collision name="fls">
+        <origin xyz="6e-05 0 -0.00011" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/fls.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_laser">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00108" ixy="0" ixz="0" iyy="0.00022" iyz="0" izz="0.00105"/>
+      </inertial>
+      <visual name="laser">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/laser.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="laser_accent"/>
+      </visual>
+      <collision name="laser">
+        <origin xyz="0.00016 -6e-05 -0.00021" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/laser.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_light_pair_bottom">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00408" ixy="0" ixz="0" iyy="0.00026" iyz="0" izz="0.00404"/>
+      </inertial>
+      <visual name="light_pair_bottom">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/light_pair_bottom.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="lights_accent"/>
+      </visual>
+      <collision name="light_pair_bottom">
+        <origin xyz="0 0 -0.00014" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/light_pair_bottom.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_light_pair_front">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00404" ixy="0" ixz="0" iyy="0.00026" iyz="0" izz="0.00408"/>
+      </inertial>
+      <visual name="light_pair_front">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/light_pair_front.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="lights_base"/>
+      </visual>
+      <collision name="light_pair_front">
+        <origin xyz="0.00014 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/light_pair_front.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_mbes">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00121" ixy="0" ixz="0" iyy="0.00547" iyz="0" izz="0.00641"/>
+      </inertial>
+      <visual name="mbes">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/mbes.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="mbes_accent"/>
+      </visual>
+      <collision name="mbes">
+        <origin xyz="0.00073 0 0.00062" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/mbes.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_prop">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.0036" ixy="0" ixz="0" iyy="0.0021" iyz="0" izz="0.0021"/>
+      </inertial>
+      <visual name="prop">
+        <origin xyz="0 0 0" rpy="0 0 -1.5708"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/prop.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="prop"/>
+      </visual>
+      <collision name="prop">
+        <origin xyz="0 -0.00054 0" rpy="0 0 -1.5708"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/prop.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_scanner_side">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00134" ixy="0" ixz="0" iyy="0.0008" iyz="0" izz="0.00134"/>
+      </inertial>
+      <visual name="scanner_side">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/scanner_side.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="scanner_base"/>
+      </visual>
+      <collision name="scanner_side">
+        <origin xyz="0 -0.00028 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/scanner_side.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_scanner_top">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00134" ixy="0" ixz="0" iyy="0.00134" iyz="0" izz="0.0008"/>
+      </inertial>
+      <visual name="scanner_top">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/scanner_top.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="scanner_accent"/>
+      </visual>
+      <collision name="scanner_top">
+        <origin xyz="0 0 0.00028" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/scanner_top.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_sss_left">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00041" ixy="0" ixz="0" iyy="0.03333" iyz="0" izz="0.03333"/>
+      </inertial>
+      <visual name="sss_left">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/sss_left.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="sss"/>
+      </visual>
+      <collision name="sss_left">
+        <origin xyz="0 0.00017 -0.00012" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/sss_left.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <link name="link_sss_right">
+      <inertial>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.961"/>
+        <inertia ixx="0.00041" ixy="0" ixz="0" iyy="0.03333" iyz="0" izz="0.03333"/>
+      </inertial>
+      <visual name="sss_right">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/sss_right.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+        <material name="sss"/>
+      </visual>
+      <collision name="sss_right">
+        <origin xyz="0 7e-05 7e-05" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://remaro_package/meshes/stl/sss_right.000.stl" scale="1.0 1.0 1.0"/>
+        </geometry>
+      </collision>
+    </link>
+
+    <joint name="joint_cam_bottom" type="fixed">
+      <origin xyz="1.11613 0 -0.27517" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_cam_bottom"/>
+    </joint>
+
+    <joint name="joint_cam_front" type="fixed">
+      <origin xyz="1.42246 -0.00323 -0.0191" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_cam_front"/>
+    </joint>
+
+    <joint name="joint_dvl" type="fixed">
+      <origin xyz="-0.63435 0 -0.27426" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_dvl"/>
+    </joint>
+
+    <joint name="joint_fin_bar" type="fixed">
+      <origin xyz="-1.23781 -0.00191 -0.01932" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_fin_bar"/>
+    </joint>
+
+    <joint name="joint_fin_pair_h" type="revolute">
+      <origin xyz="0.00147 0 0" rpy="0 0 0"/>
+      <parent link="link_fin_bar"/>
+      <child link="link_fin_pair_h"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-1.08" upper="1.08" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="joint_fin_pair_v" type="revolute">
+      <origin xyz="0.0015 0.00191 0" rpy="1.5708 0 0"/>
+      <parent link="link_fin_bar"/>
+      <child link="link_fin_pair_v"/>
+      <axis xyz="0 1.0 0"/>
+      <limit lower="-1.08" upper="1.08" effort="0" velocity="0"/>
+    </joint>
+
+    <joint name="joint_fls" type="fixed">
+      <origin xyz="1.39813 0 -0.20309" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_fls"/>
+    </joint>
+
+    <joint name="joint_laser" type="fixed">
+      <origin xyz="-0.9365 6e-05 -0.27134" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_laser"/>
+    </joint>
+
+    <joint name="joint_light_pair_bottom" type="fixed">
+      <origin xyz="1.11609 0 -0.25359" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_light_pair_bottom"/>
+    </joint>
+
+    <joint name="joint_light_pair_front" type="fixed">
+      <origin xyz="1.40611 0 -0.01758" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_light_pair_front"/>
+    </joint>
+
+    <joint name="joint_mbes" type="fixed">
+      <origin xyz="-0.00147 0 -0.26642" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_mbes"/>
+    </joint>
+
+    <joint name="joint_prop" type="continuous">
+      <origin xyz="-1.48074 0 -0.01932" rpy="0 0 1.5708"/>
+      <parent link="link_base"/>
+      <child link="link_prop"/>
+      <axis xyz="0 1.0 0"/>
+      <limit effort="2.4" velocity="1.02"/>
+    </joint>
+
+    <joint name="joint_scanner_side" type="fixed">
+      <origin xyz="-0.08613 -0.27004 -0.01727" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_scanner_side"/>
+    </joint>
+
+    <joint name="joint_scanner_top" type="fixed">
+      <origin xyz="-0.08613 0 0.25277" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_scanner_top"/>
+    </joint>
+
+    <joint name="joint_sss_left" type="fixed">
+      <origin xyz="-0.07144 0.17093 -0.19748" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_sss_left"/>
+    </joint>
+
+    <joint name="joint_sss_right" type="fixed">
+      <origin xyz="-0.07144 -0.17093 -0.19748" rpy="0 0 0"/>
+      <parent link="link_base"/>
+      <child link="link_sss_right"/>
+    </joint>
+
+    <material name="body_bottom">
+      <color rgba="0.99608 0.35294 0.12549 1.0"/>
+    </material>
+
+    <material name="body_led1">
+      <color rgba="1.0 0.50196 0.50196 1.0"/>
+    </material>
+
+    <material name="camera_accent">
+      <color rgba="0.93726 0.94118 0.9451 1.0"/>
+    </material>
+
+    <material name="camera_base">
+      <color rgba="0.05882 0.06274 0.06667 1.0"/>
+    </material>
+
+    <material name="dvl_accent">
+      <color rgba="0.49804 0 0 1.0"/>
+    </material>
+
+    <material name="fin">
+      <color rgba="0.05098 0 0.34902 1.0"/>
+    </material>
+
+    <material name="fls_accent">
+      <color rgba="0.51372 0.51765 0.51765 1.0"/>
+    </material>
+
+    <material name="laser_accent">
+      <color rgba="0 1.0 0.25098 1.0"/>
+    </material>
+
+    <material name="lights_accent">
+      <color rgba="0.78824 0.79216 0.79608 1.0"/>
+    </material>
+
+    <material name="lights_base">
+      <color rgba="0.04314 0.04706 0.05098 1.0"/>
+    </material>
+
+    <material name="mbes_accent">
+      <color rgba="0.49804 0.49804 0.49804 1.0"/>
+    </material>
+
+    <material name="prop">
+      <color rgba="0.95686 0.95686 0.95686 1.0"/>
+    </material>
+
+    <material name="scanner_accent">
+      <color rgba="0.50196 0.49804 0.49412 1.0"/>
+    </material>
+
+    <material name="scanner_base">
+      <color rgba="0.12549 0.12941 0.13333 1.0"/>
+    </material>
+
+    <material name="sss">
+      <color rgba="0.12157 0.12157 0.12157 1.0"/>
+    </material>
+
+  </robot>

@@ -1,0 +1,8 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 60
+
+propeller_controller:
+  type: velocity_controllers/JointVelocityController
+  joint: temp
+  pid: {p: 100.0, i: 0.01, d: 10.0}

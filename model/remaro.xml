@@ -1,0 +1,56 @@
+<mujoco model="remaro">
+    <compiler angle="radian" meshdir="/home/dodonkor/mujoco_ws/src/remaro_package/model/remaro/meshes/"/>
+    <size njmax="500" nconmax="100"/>
+    <default/>
+    <asset>
+        <mesh name="base.000" file="base.000.stl"/>
+        <mesh name="cam_bottom.000" file="cam_bottom.000.stl"/>
+        <mesh name="cam_front.000" file="cam_front.000.stl"/>
+        <mesh name="dvl.000" file="dvl.000.stl"/>
+        <mesh name="fin_pair_h.000" file="fin_pair_h.000.stl"/>
+        <mesh name="fin_pair_v.000" file="fin_pair_v.000.stl"/>
+        <mesh name="fls.000" file="fls.000.stl"/>
+        <mesh name="laser.000" file="laser.000.stl"/>
+        <mesh name="light_pair_bottom.000" file="light_pair_bottom.000.stl"/>
+        <mesh name="light_pair_front.000" file="light_pair_front.000.stl"/>
+        <mesh name="mbes.000" file="mbes.000.stl"/>
+        <mesh name="prop.000" file="prop.000.stl"/>
+        <mesh name="scanner_side.000" file="scanner_side.000.stl"/>
+        <mesh name="scanner_top.000" file="scanner_top.000.stl"/>
+        <mesh name="sss_left.000" file="sss_left.000.stl"/>
+        <mesh name="sss_right.000" file="sss_right.000.stl"/>
+    </asset>
+    <worldbody>
+        <body name="remaro">
+            <geom pos="-0.00055 1e-05 -5e-05" type="mesh" rgba="1 0.50196 0.50196 1" mesh="base.000"/>
+            <geom pos="1.11613 0 -0.27587" type="mesh" rgba="0.93726 0.94118 0.9451 1" mesh="cam_bottom.000"/>
+            <geom pos="1.4231 -0.00323 -0.0191" type="mesh" rgba="0.05882 0.06274 0.06667 1" mesh="cam_front.000"/>
+            <geom pos="-0.63433 0 -0.27529" type="mesh" rgba="0.49804 0 0 1" mesh="dvl.000"/>
+            <geom pos="1.39819 0 -0.2032" type="mesh" rgba="0.51372 0.51765 0.51765 1" mesh="fls.000"/>
+            <geom pos="-0.93634 0 -0.27155" type="mesh" rgba="0 1 0.25098 1" mesh="laser.000"/>
+            <geom pos="1.11609 0 -0.25373" type="mesh" rgba="0.78824 0.79216 0.79608 1" mesh="light_pair_bottom.000"/>
+            <geom pos="1.40625 0 -0.01758" type="mesh" rgba="0.04314 0.04706 0.05098 1" mesh="light_pair_front.000"/>
+            <geom pos="-0.00074 0 -0.2658" type="mesh" rgba="0.49804 0.49804 0.49804 1" mesh="mbes.000"/>
+            <geom pos="-0.08613 -0.27032 -0.01727" type="mesh" rgba="0.12549 0.12941 0.13333 1" mesh="scanner_side.000"/>
+            <geom pos="-0.08613 0 0.25305" type="mesh" rgba="0.50196 0.49804 0.49412 1" mesh="scanner_top.000"/>
+            <geom pos="-0.07144 0.1711 -0.1976" type="mesh" rgba="0.12157 0.12157 0.12157 1" mesh="sss_left.000"/>
+            <geom pos="-0.07144 -0.17086 -0.19741" type="mesh" rgba="0.12157 0.12157 0.12157 1" mesh="sss_right.000"/>
+            <body name="link_fin_pair_h" pos="-1.23634 -0.00191 -0.01932">
+                <inertial pos="0 0 0" quat="0.5 0.5 -0.5 0.5" mass="0.961" diaginertia="0.72155 0.69678 0.02607"/>
+                <joint name="joint_fin_pair_h" pos="0 0 0" axis="0 1 0" limited="true" range="-1.08 1.08"/>
+                <geom pos="-0.00073 0 0" type="mesh" rgba="0.05098 0 0.34902 1" mesh="fin_pair_h.000"/>
+            </body>
+            <body name="link_fin_pair_v" pos="-1.23631 0 -0.01932" quat="0.707105 0.707108 0 0">
+                <inertial pos="0 0 0" quat="0.707107 0 0 0.707107" mass="0.961" diaginertia="0.89248 0.86184 0.03224"/>
+                <joint name="joint_fin_pair_v" pos="0 0 0" axis="0 1 0" limited="true" range="-1.08 1.08"/>
+                <geom pos="-0.00077 0 0" quat="0.707105 -0.707108 0 0" type="mesh" rgba="0.05098 0 0.34902 1" mesh="fin_pair_v.000"/>
+            </body>
+            <body name="link_prop" pos="-1.48074 0 -0.01932" quat="0.707105 0 0 0.707108">
+                <inertial pos="0 0 0" mass="0.961" diaginertia="0.0036 0.0021 0.0021"/>
+                <joint name="joint_prop" pos="0 0 0" axis="0 1 0"/>
+                <geom pos="0 -0.00054 0" quat="0.707105 0 0 -0.707108" type="mesh" rgba="0.95686 0.95686 0.95686 1" mesh="prop.000"/>
+            </body>
+        </body>
+    </worldbody>
+    <equality/>
+</mujoco>

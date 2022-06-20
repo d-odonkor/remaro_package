@@ -1,0 +1,29 @@
+<mujoco>
+    <option timestep="0.001" integrator="RK4" gravity="0 0 0">
+    <flag sensornoise="disable" energy="enable" contact="enable" />
+  </option>
+   <!-- <option wind="0 50 0" density="10">
+    <flag constraint="disable"/>
+  </option> -->
+
+  <asset>
+    <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4" />
+    <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2" />
+  </asset>
+
+  <worldbody>
+    <geom pos="0 0 -10" name="floor" size="0 0 .05" type="plane" material="grid" condim="3" />
+    <light diffuse=".5 .5 .5" pos="0 0 5" dir="0 0 -1" />
+  </worldbody>
+
+  <contact>
+    <exclude body1="remaro" body2="link_fin_pair_h" />
+    <exclude body1="remaro" body2="link_fin_pair_v" />
+    <exclude body1="remaro" body2="link_prop" />
+    <exclude body1="link_fin_pair_h" body2="link_fin_pair_v" />
+    <exclude body1="link_fin_pair_h" body2="link_prop" />
+    <exclude body1="link_fin_pair_v" body2="link_prop" />
+  </contact>
+  
+
+</mujoco>
